@@ -23,8 +23,8 @@ export const theme = {
     }
   },
   fonts: {
-    body: "'Inter', sans-serif",
-    heading: "'Poppins', sans-serif",
+    body: "'Space Grotesk', sans-serif",
+    heading: "'Space Grotesk', sans-serif",
   },
   breakpoints: {
     sm: '640px',

@@ -4,6 +4,7 @@ import { ReactNode, useEffect } from 'react';
 import { theme } from '../../styles/theme';
 import { FloatingNav } from '../navigation/FloatingNav';
 import { useKeyboardNavigation } from '../../hooks/useKeyboardNavigation';
+import { PawIcon } from '../icons/PawIcon';
 
 interface LayoutProps {
   children: ReactNode;
@@ -93,9 +94,10 @@ const Nav = styled.nav`
 
 const Logo = styled(motion.div)`
   color: ${theme.colors.light};
-  font-family: ${theme.fonts.heading};
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-family: 'Fontdiner Swanky', cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
 `;
 
 const NavLinks = styled.div`
@@ -188,8 +190,10 @@ export const Layout = ({ children }: LayoutProps) => {
               transition={{ duration: 0.5 }}
               role="heading"
               aria-level={1}
+              style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginRight: '-0.5rem' }}
             >
-              Portfolio
+              <PawIcon fillColor={theme.colors.accent} size={36} />
+              <span>PAW</span>
             </Logo>
             <NavLinks role="list">
               <a href="#about" role="listitem" aria-label="About section">About</a>

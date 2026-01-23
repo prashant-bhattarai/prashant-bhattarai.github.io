@@ -59,7 +59,7 @@ const fadeUpKeyframes = keyframes`
 
 const Title = styled.h1`
   animation: ${fadeUpKeyframes} 0.5s ease-out forwards;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: ${theme.spacing.md};
   color: ${theme.colors.light};
   line-height: 1.1;
@@ -70,10 +70,11 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   animation: ${fadeUpKeyframes} 0.5s ease-out 0.2s forwards;
   opacity: 0;
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
   margin-bottom: ${theme.spacing.lg};
   opacity: 0.9;
   font-weight: 500;
+  white-space: nowrap;
 `;
 
 const Description = styled.p`
@@ -84,6 +85,50 @@ const Description = styled.p`
   margin-bottom: ${theme.spacing.xl};
   opacity: 0.8;
   line-height: 1.7;
+`;
+
+const CTAButtons = styled.div`
+  animation: ${fadeUpKeyframes} 0.5s ease-out 0.5s forwards;
+  opacity: 0;
+  display: flex;
+  gap: ${theme.spacing.md};
+  margin-bottom: ${theme.spacing.xl};
+  flex-wrap: wrap;
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    flex-direction: column;
+    gap: ${theme.spacing.sm};
+  }
+`;
+
+const ResumeButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: ${theme.spacing.sm};
+  padding: ${theme.spacing.md} ${theme.spacing.lg};
+  background: ${theme.colors.gradient.accent};
+  color: ${theme.colors.textDark};
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all ${theme.transitions.default};
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(246, 177, 122, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 const SocialLinks = styled.div`
@@ -127,18 +172,30 @@ export const Hero = () => {
         <HeroContent>
           <div>
             <Title role="heading" aria-level={2}>
-              Hi, I'm [Your Name]
+              Hello, I'm Prashant Bhattarai
             </Title>
             <Subtitle role="heading" aria-level={3}>
-              Full Stack Developer
+              Mechanical Engineering Student | Python & CAD | Robotics
             </Subtitle>
             <Description role="paragraph">
-              I create elegant solutions to complex problems, specializing in modern web development
-              with a focus on user experience and clean code.
+              Sophomore at Mississippi State with a 4.0 GPA, focused on turning design ideas into reality. 
+              I've worked on AI-enabled field device prototypes through product design research, and I'm diving 
+              into CAD optimization and manufacturing processes. Currently developing a Python-based simulation 
+              project and contributing to multiple engineering communities. Always learning new tools—recently 
+              CSWA certified and working toward CSWP.
             </Description>
+            <CTAButtons>
+              <ResumeButton 
+                href="/resume.pdf"
+                download="Prashant_Bhattarai_Resume.pdf"
+                aria-label="Download my resume as PDF"
+              >
+                Download Resume
+              </ResumeButton>
+            </CTAButtons>
             <SocialLinks role="list" aria-label="Social media links">
               <a 
-                href="https://github.com" 
+                href="https://github.com/prashant-bhattarai" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit my GitHub profile"
@@ -150,7 +207,7 @@ export const Hero = () => {
                 <span className="sr-only">GitHub</span>
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/prashant-bhattarai2005" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit my LinkedIn profile"
@@ -162,7 +219,7 @@ export const Hero = () => {
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a 
-                href="mailto:your.email@example.com"
+                href="mailto:prashantbhattarai224@gmail.com"
                 aria-label="Send me an email"
                 role="listitem"
               >
