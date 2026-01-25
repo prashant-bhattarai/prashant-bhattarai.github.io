@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { theme } from '../../styles/theme';
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa';
 
 const ContactSection = styled.section`
   position: relative;
@@ -200,18 +200,17 @@ const Contact = () => {
               variants={itemVariants}
               role="paragraph"
             >
-              I'm always interested in hearing about new projects and opportunities.
-              Whether you have a question or just want to say hi, feel free to reach out!
+              I'm always excited to connect with fellow engineers and discuss opportunities in mechanical engineering, robotics, and automation. Open to summer 2026 internships and collaborations. Whether you want to chat about projects, explore ideas, or just geek out over engineering—let's connect!
             </ContactText>
             <ContactEmail 
-              href="mailto:your.email@example.com"
+              href="mailto:prashantbhattarai224@gmail.com"
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              aria-label="Send me an email at your.email@example.com"
+              aria-label="Send me an email at prashantbhattarai224@gmail.com"
             >
               <FaEnvelope aria-hidden="true" />
-              <span>your.email@example.com</span>
+              <span>prashantbhattarai224@gmail.com</span>
             </ContactEmail>
             <SocialLinks 
               variants={itemVariants}
@@ -219,7 +218,7 @@ const Contact = () => {
               aria-label="Social media links"
             >
               <SocialLink 
-                href="https://github.com"
+                href="https://github.com/prashant-bhattarai"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ y: -5 }}
@@ -230,7 +229,7 @@ const Contact = () => {
                 <span className="sr-only">GitHub</span>
               </SocialLink>
               <SocialLink 
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/prashant-bhattarai2005"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ y: -5 }}
@@ -241,15 +240,15 @@ const Contact = () => {
                 <span className="sr-only">LinkedIn</span>
               </SocialLink>
               <SocialLink 
-                href="https://twitter.com"
+                href="https://discord.com/users/852911254745251900"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ y: -5 }}
                 role="listitem"
-                aria-label="Follow me on Twitter"
+                aria-label="Connect with me on Discord"
               >
-                <FaTwitter aria-hidden="true" />
-                <span className="sr-only">Twitter</span>
+                <FaDiscord aria-hidden="true" />
+                <span className="sr-only">Discord</span>
               </SocialLink>
             </SocialLinks>
           </ContactContent>
