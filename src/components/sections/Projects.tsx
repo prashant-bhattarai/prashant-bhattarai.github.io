@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { theme } from '../../styles/theme';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaCalendar, FaUsers } from 'react-icons/fa';
 
 const ProjectsSection = styled.section`
   min-height: 100vh;
@@ -40,160 +40,133 @@ const SectionTitle = styled(motion.h2)`
   }
 `;
 
-const ProjectGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: ${theme.spacing.lg};
-  width: 100%;
-  margin-top: ${theme.spacing.lg};
-
-  @media (min-width: ${theme.breakpoints.md}) {
-    gap: ${theme.spacing.xl};
-    margin-top: ${theme.spacing.xl};
-  }
-`;
-
-const ProjectCard = styled(motion.div)`
+const ExperienceCard = styled(motion.div)`
   background: ${theme.colors.glass.background};
   backdrop-filter: blur(8px);
   border-radius: 12px;
-  overflow: hidden;
+  padding: ${theme.spacing.lg};
+  margin-bottom: ${theme.spacing.xl};
+  border-left: 4px solid ${theme.colors.accent};
   color: ${theme.colors.textLight};
   transition: all ${theme.transitions.default};
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    padding: ${theme.spacing.xl};
+  }
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateX(5px);
     box-shadow: 0 8px 30px rgba(246, 177, 122, 0.15);
   }
 `;
 
-const ProjectImage = styled.div<{ imageUrl: string }>`
-  width: 100%;
-  height: 180px;
-  background-image: url(${props => props.imageUrl});
-  background-size: cover;
-  background-position: center;
-  position: relative;
-
-  @media (min-width: ${theme.breakpoints.md}) {
-    height: 220px;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    background: linear-gradient(to top, ${theme.colors.glass.card}, transparent);
-  }
-`;
-
-const ProjectContent = styled.div`
-  padding: ${theme.spacing.md};
-  flex: 1;
+const ExperienceHeader = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: ${theme.spacing.md};
+  gap: ${theme.spacing.md};
+  flex-wrap: wrap;
 
   @media (min-width: ${theme.breakpoints.md}) {
-    padding: ${theme.spacing.lg};
+    align-items: center;
   }
 `;
 
-const ProjectTitle = styled.h3`
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
-  margin-bottom: ${theme.spacing.sm};
+const ExperienceTitle = styled.h3`
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   color: ${theme.colors.light};
+  margin: 0;
   font-weight: 600;
 `;
 
-const ProjectDescription = styled.p`
-  color: ${theme.colors.textLight};
-  margin-bottom: ${theme.spacing.lg};
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  line-height: 1.6;
-  flex: 1;
-  opacity: 0.9;
-`;
-
-const TechStack = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: ${theme.spacing.xs};
-  margin-bottom: ${theme.spacing.md};
-
-  @media (min-width: ${theme.breakpoints.md}) {
-    gap: ${theme.spacing.sm};
-    margin-bottom: ${theme.spacing.lg};
-  }
-`;
-
-const TechTag = styled.span`
-  background: ${theme.colors.glass.card};
+const ExperienceOrganization = styled.p`
+  font-size: 1rem;
   color: ${theme.colors.accent};
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: clamp(0.75rem, 2vw, 0.85rem);
+  margin: 0.3rem 0 0 0;
   font-weight: 500;
-  transition: all ${theme.transitions.default};
+`;
 
-  @media (min-width: ${theme.breakpoints.md}) {
-    padding: 6px 12px;
-  }
+const ExperienceMeta = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing.sm};
+  font-size: 0.9rem;
+  color: ${theme.colors.accent};
+  font-weight: 500;
 
-  &:hover {
-    background: ${theme.colors.gradient.accent};
-    color: ${theme.colors.textDark};
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(246, 177, 122, 0.2);
+  svg {
+    font-size: 0.9em;
   }
 `;
 
-const ProjectLinks = styled.div`
-  display: flex;
-  gap: ${theme.spacing.md};
-  margin-top: auto;
-  padding-top: ${theme.spacing.md};
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  
-  a {
-    color: ${theme.colors.accent};
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    transition: all ${theme.transitions.default};
-    padding: ${theme.spacing.xs};
-    border-radius: 4px;
-    
-    &:hover {
-      color: ${theme.colors.light};
-      background: ${theme.colors.glass.card};
-      transform: translateY(-2px);
+const ExperienceDescription = styled.p`
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: ${theme.colors.textLight};
+  margin: ${theme.spacing.md} 0;
+  opacity: 0.85;
+`;
+
+const SectionSubtitle = styled.h4`
+  font-size: 1.1rem;
+  color: ${theme.colors.light};
+  margin: ${theme.spacing.lg} 0 ${theme.spacing.md} 0;
+  font-weight: 600;
+`;
+
+const BulletList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: ${theme.spacing.md} 0;
+
+  li {
+    padding-left: ${theme.spacing.lg};
+    margin-bottom: ${theme.spacing.sm};
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: ${theme.colors.textLight};
+
+    &::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: ${theme.colors.accent};
+      font-weight: bold;
     }
   }
 `;
 
-const projects = [
+const TechBadge = styled.span`
+  background: ${theme.colors.gradient.accent};
+  color: ${theme.colors.textDark};
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+`;
+
+const experiences = [
   {
     id: 1,
-    title: "Project One",
-    description: "A full-stack web application with real-time features and modern UI/UX design.",
-    image: "https://via.placeholder.com/400x200",
-    techStack: ["React", "Node.js", "MongoDB", "Socket.IO"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
-  {
-    id: 2,
-    title: "Project Two",
-    description: "Mobile-first e-commerce platform with seamless payment integration.",
-    image: "https://via.placeholder.com/400x200",
-    techStack: ["Next.js", "TypeScript", "Stripe", "Tailwind"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
+    title: "Product Design Research Intern",
+    organization: "USDA REEU AI2F Summer Research Program",
+    duration: "June 2025 - August 2025",
+    team: "4-person interdisciplinary team",
+    overview: "Designed and prototyped a portable, modular AI-enabled field device for evaluating wood chip moisture content and size distribution. The system addressed limitations of existing lab-based equipment by enabling offline, real-time field analysis in a compact, cost-effective form factor.",
+    role: "Sole mechanical designer on interdisciplinary team spanning Mechanical Engineering, Industrial & Systems Engineering, Forestry, and Sustainable Bioproducts. Owned the full product lifecycle from concept development through fabrication, integration, testing, and documentation.",
+    contributions: [
+      "Designed detailed parts, assemblies, and drawings using SolidWorks and Fusion 360",
+      "Applied design-for-manufacturing and tolerancing principles to enable reliable fabrication",
+      "Fabricated and iterated multiple prototypes using additive manufacturing; performed printer setup, troubleshooting, and post-processing",
+      "Integrated embedded hardware including NVIDIA Jetson Nano, camera system, touchscreen display, and battery power",
+      "Deployed pre-trained machine learning models on embedded hardware for offline field operation",
+      "Conducted data collection and validation to support AI model evaluation"
+    ],
+    techStack: ["SolidWorks", "Fusion 360", "3D Printing", "Embedded Systems", "ML Deployment", "Design for Manufacturing"],
+    outcomes: "The modular architecture reduced fabrication cost and enabled rapid future upgrades. The final prototype supported downstream PhD-level research and contributed to ongoing academic paper development. Findings were presented at the University Undergraduate Research Symposium."
+  }
 ];
 
 const Projects = () => {
@@ -219,69 +192,66 @@ const Projects = () => {
   };
 
   return (
-    <ProjectsSection id="projects" role="region" aria-label="Featured Projects">
+    <ProjectsSection id="projects" role="region" aria-label="Experience and Projects">
       <div className="container">
-        <SectionTitle
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          role="heading"
-          aria-level={2}
-        >
-          Featured Projects
-        </SectionTitle>
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <ProjectGrid role="list">
-          {projects.map((project) => (
-            <ProjectCard 
-              key={project.id} 
+          <SectionTitle 
+            variants={itemVariants}
+            role="heading"
+            aria-level={2}
+          >
+            Experience & Projects
+          </SectionTitle>
+
+          {/* Experience Cards */}
+          {experiences.map((experience) => (
+            <ExperienceCard
+              key={experience.id}
               variants={itemVariants}
-              role="listitem"
-              aria-labelledby={`project-title-${project.id}`}
+              role="article"
             >
-              <ProjectImage 
-                imageUrl={project.image} 
-                role="img" 
-                aria-label={`Screenshot of ${project.title}`} 
-              />
-              <ProjectContent>
-                <ProjectTitle id={`project-title-${project.id}`}>{project.title}</ProjectTitle>
-                <ProjectDescription>{project.description}</ProjectDescription>
-                <TechStack role="list" aria-label={`Technologies used in ${project.title}`}>
-                  {project.techStack.map((tech) => (
-                    <TechTag key={tech} role="listitem">{tech}</TechTag>
-                  ))}
-                </TechStack>
-                <ProjectLinks>
-                  <a 
-                    href={project.githubUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label={`View ${project.title} source code on GitHub`}
-                  >
-                    <FaGithub aria-hidden="true" />
-                    <span className="sr-only">GitHub repository</span>
-                  </a>
-                  <a 
-                    href={project.liveUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label={`Visit ${project.title} live site`}
-                  >
-                    <FaExternalLinkAlt aria-hidden="true" />
-                    <span className="sr-only">Live site</span>
-                  </a>
-                </ProjectLinks>
-              </ProjectContent>
-            </ProjectCard>
+              <ExperienceHeader>
+                <div>
+                  <ExperienceTitle>{experience.title}</ExperienceTitle>
+                  <ExperienceOrganization>{experience.organization}</ExperienceOrganization>
+                </div>
+                <ExperienceMeta>
+                  <FaCalendar aria-hidden="true" />
+                  <span>{experience.duration}</span>
+                </ExperienceMeta>
+              </ExperienceHeader>
+
+              <ExperienceMeta style={{ marginBottom: `${theme.spacing.md}` }}>
+                <FaUsers aria-hidden="true" />
+                <span>{experience.team}</span>
+              </ExperienceMeta>
+
+              <ExperienceDescription>{experience.overview}</ExperienceDescription>
+
+              <SectionSubtitle>My Role & Contributions</SectionSubtitle>
+              <ExperienceDescription>{experience.role}</ExperienceDescription>
+
+              <BulletList>
+                {experience.contributions.map((contribution, idx) => (
+                  <li key={idx}>{contribution}</li>
+                ))}
+              </BulletList>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: `${theme.spacing.sm}`, margin: `${theme.spacing.md} 0` }}>
+                {experience.techStack.map((tech, idx) => (
+                  <TechBadge key={idx}>{tech}</TechBadge>
+                ))}
+              </div>
+
+              <SectionSubtitle>Impact & Outcomes</SectionSubtitle>
+              <ExperienceDescription>{experience.outcomes}</ExperienceDescription>
+            </ExperienceCard>
           ))}
-          </ProjectGrid>
         </motion.div>
       </div>
     </ProjectsSection>
