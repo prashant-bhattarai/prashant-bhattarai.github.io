@@ -153,7 +153,7 @@ const SkillItem = styled(motion.div)`
 
 const skillCategories = [
   {
-    title: 'Frontend',
+    title: 'CAD',
     icon: <FaReact />,
     skills: [
       { name: 'React', icon: <FaReact /> },
@@ -163,7 +163,7 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Backend',
+    title: 'Programming and Analysis',
     icon: <FaNodeJs />,
     skills: [
       { name: 'Node.js', icon: <FaNodeJs /> },
