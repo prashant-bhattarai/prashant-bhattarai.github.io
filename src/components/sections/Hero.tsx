@@ -40,6 +40,10 @@ const HeroContent = styled.div`
   border-radius: 20px;
   padding: ${theme.spacing.lg};
   border: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media (min-width: ${theme.breakpoints.md}) {
     padding: ${theme.spacing.xl};
@@ -59,32 +63,36 @@ const fadeUpKeyframes = keyframes`
 
 const Title = styled.h1`
   animation: ${fadeUpKeyframes} 0.5s ease-out forwards;
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 6vw, 4rem);
   margin-bottom: ${theme.spacing.md};
   color: ${theme.colors.light};
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.02em;
-  white-space: nowrap;
+  text-align: center;
+  font-weight: 700;
 `;
 
 const Subtitle = styled.h2`
   animation: ${fadeUpKeyframes} 0.5s ease-out 0.2s forwards;
   opacity: 0;
-  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
   margin-bottom: ${theme.spacing.lg};
   opacity: 0.9;
   font-weight: 500;
-  white-space: nowrap;
+  text-align: center;
+  line-height: 1.4;
 `;
 
 const Description = styled.p`
   animation: ${fadeUpKeyframes} 0.5s ease-out 0.4s forwards;
   opacity: 0;
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
   max-width: 600px;
-  margin-bottom: ${theme.spacing.xl};
-  opacity: 0.8;
-  line-height: 1.7;
+  margin: 0 auto ${theme.spacing.xl};
+  opacity: 0.85;
+  line-height: 1.8;
+  text-align: center;
+  font-weight: 400;
 `;
 
 const CTAButtons = styled.div`
@@ -94,6 +102,7 @@ const CTAButtons = styled.div`
   gap: ${theme.spacing.md};
   margin-bottom: ${theme.spacing.xl};
   flex-wrap: wrap;
+  justify-content: center;
 
   @media (max-width: ${theme.breakpoints.sm}) {
     flex-direction: column;
@@ -136,6 +145,7 @@ const SocialLinks = styled.div`
   opacity: 0;
   display: flex;
   gap: ${theme.spacing.md};
+  justify-content: center;
   
   a {
     color: ${theme.colors.textLight};

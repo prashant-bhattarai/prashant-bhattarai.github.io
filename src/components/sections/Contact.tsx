@@ -31,10 +31,12 @@ const ContactSection = styled.section`
 
 const SectionTitle = styled(motion.h2)`
   text-align: center;
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-size: clamp(2.2rem, 4.5vw, 2.8rem);
   margin-bottom: ${theme.spacing.lg};
   color: ${theme.colors.light};
   position: relative;
+  font-weight: 700;
+  line-height: 1.2;
 
   @media (min-width: ${theme.breakpoints.md}) {
     margin-bottom: ${theme.spacing.xl};
@@ -70,11 +72,12 @@ const ContactContent = styled.div`
 `;
 
 const ContactText = styled(motion.p)`
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
   margin-bottom: ${theme.spacing.lg};
   color: ${theme.colors.textLight};
-  line-height: 1.8;
-  opacity: 0.9;
+  line-height: 1.85;
+  opacity: 0.92;
+  font-weight: 400;
 
   @media (min-width: ${theme.breakpoints.md}) {
     margin-bottom: ${theme.spacing.xl};
@@ -85,7 +88,8 @@ const ContactEmail = styled(motion.a)`
   display: inline-flex;
   align-items: center;
   gap: ${theme.spacing.sm};
-  font-size: clamp(0.9rem, 2vw, 1.3rem);
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-weight: 600;
   color: ${theme.colors.accent};
   margin-bottom: ${theme.spacing.lg};
   padding: ${theme.spacing.sm} ${theme.spacing.lg};

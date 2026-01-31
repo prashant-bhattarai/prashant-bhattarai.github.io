@@ -19,10 +19,12 @@ const ProjectsSection = styled.section`
 
 const SectionTitle = styled(motion.h2)`
   text-align: center;
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-size: clamp(2.2rem, 4.5vw, 2.8rem);
   margin-bottom: calc(${theme.spacing.xl} * 1.5);
   color: ${theme.colors.textLight};
   position: relative;
+  font-weight: 700;
+  line-height: 1.2;
   
   &::after {
     content: '';
@@ -162,17 +164,18 @@ const ExperienceHeader = styled.div`
 `;
 
 const ExperienceTitle = styled.h3`
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1.3rem, 3.2vw, 1.65rem);
   color: ${theme.colors.light};
   margin: 0;
-  font-weight: 600;
+  font-weight: 700;
+  line-height: 1.3;
 `;
 
 const ExperienceOrganization = styled.p`
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   color: ${theme.colors.accent};
   margin: 0.3rem 0 0 0;
-  font-weight: 500;
+  font-weight: 600;
 `;
 
 const ExperienceMeta = styled.div`
@@ -189,11 +192,12 @@ const ExperienceMeta = styled.div`
 `;
 
 const ExperienceDescription = styled.p`
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  line-height: 1.8;
   color: ${theme.colors.textLight};
   margin: ${theme.spacing.md} 0;
-  opacity: 0.85;
+  opacity: 0.9;
+  font-weight: 400;
 `;
 
 const SectionSubtitle = styled.h4`

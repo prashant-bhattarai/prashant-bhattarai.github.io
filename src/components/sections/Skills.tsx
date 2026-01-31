@@ -2,20 +2,18 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { theme } from '../../styles/theme';
 import { 
-  FaReact, 
-  FaNodeJs, 
-  FaDatabase, 
-  FaDocker,
-  FaGitAlt,
-  FaAws
+  FaCube,
+  FaMicrochip,
+  FaChartLine,
+  FaTools,
+  FaDatabase,
+  FaCode,
+  FaCog
 } from 'react-icons/fa';
 import { 
-  SiTypescript,
-  SiJavascript,
   SiPython,
-  SiMongodb,
-  SiPostgresql,
-  SiRedux
+  SiCplusplus,
+  SiLatex
 } from 'react-icons/si';
 
 const SkillsSection = styled.section`
@@ -36,10 +34,12 @@ const SkillsSection = styled.section`
 
 const SectionTitle = styled(motion.h2)`
   text-align: center;
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-size: clamp(2.2rem, 4.5vw, 2.8rem);
   margin-bottom: ${theme.spacing.xl};
   color: ${theme.colors.light};
   position: relative;
+  font-weight: 700;
+  line-height: 1.2;
 
   &::after {
     content: '';
@@ -57,10 +57,11 @@ const SectionTitle = styled(motion.h2)`
 const SkillsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: ${theme.spacing.lg};
+  gap: ${theme.spacing.xl};
   width: 100%;
-  max-width: 1200px;
   margin-top: ${theme.spacing.xl};
+  padding: 0 ${theme.spacing.lg};
+  justify-items: center;
 
   @media (min-width: ${theme.breakpoints.md}) {
     grid-template-columns: repeat(3, 1fr);
@@ -72,13 +73,11 @@ const SkillCategory = styled(motion.div)`
   background: ${theme.colors.glass.background};
   backdrop-filter: blur(8px);
   border-radius: 20px;
-  padding: ${theme.spacing.lg};
+  padding: ${theme.spacing.xl};
   transition: all ${theme.transitions.default};
   height: 100%;
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  margin: 0 auto;
   width: 100%;
 
   &:hover {
@@ -88,15 +87,16 @@ const SkillCategory = styled(motion.div)`
 `;
 
 const CategoryTitle = styled.h3`
-  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  font-size: clamp(1.6rem, 3.5vw, 2rem);
   margin-bottom: ${theme.spacing.xl};
   color: ${theme.colors.light};
   display: flex;
   align-items: center;
   gap: ${theme.spacing.sm};
-  font-weight: 600;
+  font-weight: 700;
   position: relative;
   padding-bottom: ${theme.spacing.md};
+  line-height: 1.3;
 
   &::after {
     content: '';
@@ -127,11 +127,13 @@ const SkillItem = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: ${theme.spacing.sm};
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
   padding: ${theme.spacing.md};
   border-radius: 12px;
   transition: all ${theme.transitions.default};
   background: ${theme.colors.glass.card};
+  font-weight: 500;
+  line-height: 1.5;
 
   svg {
     font-size: clamp(1.1rem, 2vw, 1.5rem);
@@ -153,33 +155,33 @@ const SkillItem = styled(motion.div)`
 
 const skillCategories = [
   {
-    title: 'CAD',
-    icon: <FaReact />,
+    title: 'CAD & Design',
+    icon: <FaCube />,
     skills: [
-      { name: 'React', icon: <FaReact /> },
-      { name: 'TypeScript', icon: <SiTypescript /> },
-      { name: 'JavaScript', icon: <SiJavascript /> },
-      { name: 'Redux', icon: <SiRedux /> },
+      { name: 'SolidWorks (CSWA)', icon: <FaCube /> },
+      { name: 'Fusion 360', icon: <FaTools /> },
+      { name: 'Additive Manufacturing', icon: <FaCube /> },
+      { name: 'Design for Manufacturing', icon: <FaTools /> },
     ],
   },
   {
-    title: 'Programming and Analysis',
-    icon: <FaNodeJs />,
+    title: 'Programming & Analysis',
+    icon: <FaCode />,
     skills: [
-      { name: 'Node.js', icon: <FaNodeJs /> },
       { name: 'Python', icon: <SiPython /> },
-      { name: 'MongoDB', icon: <SiMongodb /> },
-      { name: 'PostgreSQL', icon: <SiPostgresql /> },
+      { name: 'C / C++', icon: <SiCplusplus /> },
+      { name: 'Data Analysis', icon: <FaChartLine /> },
+      { name: 'Excel', icon: <FaDatabase /> },
     ],
   },
   {
-    title: 'DevOps',
-    icon: <FaDocker />,
+    title: 'Research & Sensors',
+    icon: <FaMicrochip />,
     skills: [
-      { name: 'Docker', icon: <FaDocker /> },
-      { name: 'Git', icon: <FaGitAlt /> },
-      { name: 'AWS', icon: <FaAws /> },
-      { name: 'CI/CD', icon: <FaDatabase /> },
+      { name: 'GPS/IMU Sensor Fusion', icon: <FaMicrochip /> },
+      { name: 'Vehicle Localization', icon: <FaCog /> },
+      { name: 'Technical Documentation', icon: <SiLatex /> },
+      { name: 'Research Methodology', icon: <FaDatabase /> },
     ],
   },
 ];
@@ -208,7 +210,7 @@ const Skills = () => {
 
   return (
     <SkillsSection id="skills" role="region" aria-label="Skills and Expertise">
-      <SectionTitle
+      <SectionTitle 
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
