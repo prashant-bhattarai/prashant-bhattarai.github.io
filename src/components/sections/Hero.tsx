@@ -191,8 +191,8 @@ export const Hero = () => {
               Sophomore at Mississippi State with a 4.0 GPA, focused on turning design ideas into reality. 
               I've worked on AI-enabled field device prototypes through product design research, and I'm diving 
               into CAD optimization and manufacturing processes. Currently developing a Python-based simulation 
-              project and contributing to multiple engineering communities. Always learning new tools—recently 
-              CSWA certified and working toward CSWP.
+              project and contributing to multiple engineering communities. Always learning new tools—CSWA and 
+              CSWP certified.
             </Description>
             <CTAButtons>
               <ResumeButton 
